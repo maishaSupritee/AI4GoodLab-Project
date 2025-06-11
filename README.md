@@ -32,8 +32,8 @@ python -m venv ./venv
 - matplotlib
 - seaborn
 
-To install using terminal:
+To install all the packages using terminal:
 
 ```bash
-pip install package-name
+pip install -r requirements.txt
 ```
