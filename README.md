@@ -1,4 +1,4 @@
-# Department of \***\*\_\*\***
+# Department of **\_**
 
 Team Members:
 
@@ -10,7 +10,7 @@ Team Members:
 
 # Setting up Environment
 
-### ** Create a virtual environment in this project folder**
+### **Create a virtual environment in this project folder**
 
 Open the terminal and follow the code below:
 
@@ -24,15 +24,7 @@ python -m venv ./venv
 .\venv\Scripts\activate
 ```
 
-### Install the following packages
-
-- pandas
-- numpy
-- scipy
-- matplotlib
-- seaborn
-
-To install all the packages using terminal:
+### To install all the packages using terminal:
 
 ```bash
 pip install -r requirements.txt
