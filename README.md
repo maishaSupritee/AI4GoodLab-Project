@@ -40,10 +40,12 @@ pip install -r requirements.txt
 
 # Website
 
-The website is in the website directory. Make sure you have node.js installed.
+The website is in the website directory
+
+Make sure you have node.js installed.
 
 ### Website Setup
-When you first download the website, run `npm install` to download the node_modules folder.
+When you first download the website, run `npm install` to download the node_modules folder
 
 ### Run Website Server
 
