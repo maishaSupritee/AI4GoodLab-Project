@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_a29939c2e109b8f93041c077a6c4eec9 {
+                #map_c47aaebd4212f9399408892dcae9400e {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,19 +54,19 @@
 <body>
     
     
-            <div class="folium-map" id="map_a29939c2e109b8f93041c077a6c4eec9" ></div>
+            <div class="folium-map" id="map_c47aaebd4212f9399408892dcae9400e" ></div>
         
 </body>
 <script>
     
     
-            var map_a29939c2e109b8f93041c077a6c4eec9 = L.map(
-                "map_a29939c2e109b8f93041c077a6c4eec9",
+            var map_c47aaebd4212f9399408892dcae9400e = L.map(
+                "map_c47aaebd4212f9399408892dcae9400e",
                 {
-                    center: [0.0, 0.0],
+                    center: [49.22691073805821, -123.12734878115373],
                     crs: L.CRS.EPSG3857,
                     ...{
-  "zoom": 1,
+  "zoom": 12,
   "zoomControl": true,
   "preferCanvas": false,
 }
@@ -78,7 +78,7 @@
 
         
     
-            var tile_layer_7d04c3d12fe843174062f832dc7f1905 = L.tileLayer(
+            var tile_layer_22def57fb72a8f0c97e6456ddead5734 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,39 +95,56 @@
             );
         
     
-            tile_layer_7d04c3d12fe843174062f832dc7f1905.addTo(map_a29939c2e109b8f93041c077a6c4eec9);
+            tile_layer_22def57fb72a8f0c97e6456ddead5734.addTo(map_c47aaebd4212f9399408892dcae9400e);
         
     
-            var feature_group_9a93f310c9f3d7c3ee6af08d6b90c6df = L.featureGroup(
+            var feature_group_cc363b34d9911c7f8c787bf7dab4700f = L.featureGroup(
                 {
 }
             );
         
     
-            var marker_98ce970562d5b00b1a0379439263fd11 = L.marker(
-                [0.0, 0.0],
+            var marker_7ae57a94944cca5b622ba10aedc282dd = L.marker(
+                [49.22691073805821, -123.12734878115373],
                 {
 }
-            ).addTo(feature_group_9a93f310c9f3d7c3ee6af08d6b90c6df);
+            ).addTo(feature_group_cc363b34d9911c7f8c787bf7dab4700f);
         
     
-            var layer_control_df9f76f1d3a1142019f7875fbb221004_layers = {
+        var popup_2b905957ad7240364591e658146d0563 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_111526cfaccdf60848e26c1c713de417 = $(`<div id="html_111526cfaccdf60848e26c1c713de417" style="width: 100.0%; height: 100.0%;">Vancouver</div>`)[0];
+                popup_2b905957ad7240364591e658146d0563.setContent(html_111526cfaccdf60848e26c1c713de417);
+            
+        
+
+        marker_7ae57a94944cca5b622ba10aedc282dd.bindPopup(popup_2b905957ad7240364591e658146d0563)
+        ;
+
+        
+    
+    
+            var layer_control_e5ba80432652356e1b0371cc157fa842_layers = {
                 base_layers : {
                 },
                 overlays :  {
-                    "OpenStreetMap" : tile_layer_7d04c3d12fe843174062f832dc7f1905,
-                    "Icon collection" : feature_group_9a93f310c9f3d7c3ee6af08d6b90c6df,
+                    "OpenStreetMap" : tile_layer_22def57fb72a8f0c97e6456ddead5734,
+                    "Icon collection" : feature_group_cc363b34d9911c7f8c787bf7dab4700f,
                 },
             };
-            let layer_control_df9f76f1d3a1142019f7875fbb221004 = L.control.layers(
-                layer_control_df9f76f1d3a1142019f7875fbb221004_layers.base_layers,
-                layer_control_df9f76f1d3a1142019f7875fbb221004_layers.overlays,
+            let layer_control_e5ba80432652356e1b0371cc157fa842 = L.control.layers(
+                layer_control_e5ba80432652356e1b0371cc157fa842_layers.base_layers,
+                layer_control_e5ba80432652356e1b0371cc157fa842_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_a29939c2e109b8f93041c077a6c4eec9);
+            ).addTo(map_c47aaebd4212f9399408892dcae9400e);
 
         
 </script>

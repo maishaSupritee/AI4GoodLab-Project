@@ -1,11 +1,11 @@
 import folium
 
-m = folium.Map(tiles=None)
+m = folium.Map(location = [49.22691073805821, -123.12734878115373], zoom_start =13, tiles=None)
 
 folium.TileLayer(tiles="OpenStreetMap", overlay=True, name="OpenStreetMap").add_to(m)
 
 fg = folium.FeatureGroup(name="Icon collection", show=False).add_to(m)
-folium.Marker(location=(0, 0)).add_to(fg)
+folium.Marker(location=(49.22691073805821, -123.12734878115373), popup = "Vancouver").add_to(fg)
 
 # multiple overlays from datasets example
 # folium.GeoJson(sidewalk_data, name="Sidewalks").add_to(m)
