@@ -6,5 +6,5 @@ seaborn
 scikit-learn
 torch
 folium
-geopandas
 shapely
+geopandas
