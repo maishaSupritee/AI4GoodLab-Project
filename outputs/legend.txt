@@ -1,0 +1,19 @@
+OUTPUT 1:
+    Elbow:
+        n_init == 1
+        init == kmeans++
+
+    KMeans:
+        n_init == 1
+        init == kmeans++
+        k = 7
+
+OUTPUT 2:
+    Elbow:
+        n_init == 25
+        init == random
+
+    KMeans: 
+        n_init == 10
+        init == kmeans++
+        k = 8
