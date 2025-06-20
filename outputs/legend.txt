@@ -17,3 +17,14 @@ OUTPUT 2:
         n_init == 10
         init == kmeans++
         k = 8
+
+OUTPUT 3:
+    Elbow:
+        n_init == 25
+        init == random
+        random_state == 3
+        
+    KMeans: 
+        n_init == 25
+        init == kmeans++
+        k = 9
