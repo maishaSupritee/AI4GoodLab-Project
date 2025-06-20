@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_421d74186c7a68dc9e445353c3b5424d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 220px; height: 220px;
+     border:2px solid grey; z-index: 9999; font-size:12px;
+     background-color:white; padding: 10px;
+     box-shadow: 0 0 15px rgba(0,0,0,0.2)">
+
+     <h4 style="margin-top:0">Vancouver Streets</h4>
+     <div style="display: flex; align-items: center;">
+         <i style="background:red; width:15px; height:15px; display:inline-block; margin-right:5px;"></i>
+         <span>Arterial Roads</span>
+     </div>
+     <div style="display: flex; align-items: center;">
+         <i style="background:orange; width:15px; height:15px; display:inline-block; margin-right:5px;"></i>
+         <span>Secondary Arterial</span>
+     </div>
+     <div style="display: flex; align-items: center;">
+         <i style="background:blue; width:15px; height:15px; display:inline-block; margin-right:5px;"></i>
+         <span>Residential</span>
+     </div>
+     <div style="display: flex; align-items: center;">
+         <i style="background:gray; width:15px; height:15px; display:inline-block; margin-right:5px;"></i>
+         <span>Other Streets</span>
+     </div>
+     <hr>
+     <div style="display: flex; align-items: center;">
+         <i class="fa fa-road" style="color:red; width:15px; height:15px; display:inline-block; margin-right:5px;"></i>
+         <span>Major Road Markers</span>
+     </div>
+     <div style="display: flex; align-items: center;">
+         <div style="background: linear-gradient(to right, blue, lime, orange, red); 
+              width:15px; height:15px; display:inline-block; margin-right:5px;"></div>
+         <span>Street Density</span>
+     </div>
+</div>
+    
+<h3 align="center" style="font-size:16px; margin-top:10px; margin-bottom:0">
+    <b>Vancouver Public Street Network</b>
+</h3>
+    
+            <div class="folium-map" id="map_421d74186c7a68dc9e445353c3b5424d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_421d74186c7a68dc9e445353c3b5424d = L.map(
+                "map_421d74186c7a68dc9e445353c3b5424d",
+                {
+                    center: [49.25, -123.12],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0400c6787322efa3bed5aade40220dc5 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0400c6787322efa3bed5aade40220dc5.addTo(map_421d74186c7a68dc9e445353c3b5424d);
+        
+    
+            var feature_group_f0a51cd9bed9a5f6dbf57b65a2768e69 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_f0a51cd9bed9a5f6dbf57b65a2768e69.addTo(map_421d74186c7a68dc9e445353c3b5424d);
+        
+    
+            var feature_group_6719ba3cfcde67e528b2ec0ba556fba2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_7fd97050d88b66ac942c23f0c672da5c = L.heatLayer(
+                [],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 15,
+  "blur": 15,
+  "gradient": {
+  0.4: "blue",
+  0.6: "lime",
+  0.8: "orange",
+  1.0: "red",
+},
+}
+            );
+        
+    
+            heat_map_7fd97050d88b66ac942c23f0c672da5c.addTo(feature_group_6719ba3cfcde67e528b2ec0ba556fba2);
+        
+    
+            var feature_group_7c82b03c178cf07df2ce0d6623946e6b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var feature_group_bf9eeca39da742e32623423040d7cf74 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_bf9eeca39da742e32623423040d7cf74.addTo(map_421d74186c7a68dc9e445353c3b5424d);
+        
+    
+            var layer_control_bbdf92223dc8d2a1f1f1ac77d91694e6_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_0400c6787322efa3bed5aade40220dc5,
+                },
+                overlays :  {
+                    "Street Lines" : feature_group_f0a51cd9bed9a5f6dbf57b65a2768e69,
+                    "Street Density Heatmap" : feature_group_6719ba3cfcde67e528b2ec0ba556fba2,
+                    "Street Markers" : feature_group_7c82b03c178cf07df2ce0d6623946e6b,
+                    "Arterial Roads" : feature_group_bf9eeca39da742e32623423040d7cf74,
+                },
+            };
+            let layer_control_bbdf92223dc8d2a1f1f1ac77d91694e6 = L.control.layers(
+                layer_control_bbdf92223dc8d2a1f1f1ac77d91694e6_layers.base_layers,
+                layer_control_bbdf92223dc8d2a1f1f1ac77d91694e6_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_421d74186c7a68dc9e445353c3b5424d);
+
+        
+</script>
+</html>
