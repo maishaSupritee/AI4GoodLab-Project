@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import folium
 from folium.plugins import HeatMap
+from folium import Html, Popup
 from branca.colormap import LinearColormap 
 
 csv_path = os.path.abspath(
@@ -9,7 +10,7 @@ csv_path = os.path.abspath(
 )
 df = pd.read_csv(csv_path)
 
-m = folium.Map(location = [49.22691073805821, -123.12734878115373], zoom_start =12, tiles="CartoDB Positron")
+m = folium.Map(location = [49.22691073805821, -123.12734878115373], zoom_start =11, tiles="CartoDB Positron")
 
 fg = folium.FeatureGroup(name="Icon collection", show=False).add_to(m)
 
@@ -30,6 +31,24 @@ colormap = LinearColormap(colors=['blue','cyan','lime','yellow','red'], vmin=1, 
 colormap.add_to(m) 
 
 #pop up markers
+pavement_cols = [
+    'pavement_VERY POOR','pavement_POOR',
+    'pavement_FAIR','pavement_GOOD','pavement_VERY GOOD'
+]
+def pick_pavement(row):
+    for col in pavement_cols:
+        if row.get(col, 0) == 1:
+            # drop the 'pavement_' prefix and title-case
+            return col.replace('pavement_', '').title()
+    return "Unknown"
+df['pavement_text'] = df.apply(pick_pavement, axis=1)
+
+# 2) Construction: yes/no if under_construction == 1
+df['construction_text'] = df['under_construction'].map({1: 'Yes', 0: 'No'})
+
+# 3) Curbs: yes/no if you have any curb ramps
+df['curbs_text'] = df['curb_ramp_count'].apply(lambda x: 'Yes' if x>0 else 'No')
+
 for _, row in df.iterrows():
     # Place an invisible marker at each point
     marker = folium.CircleMarker(
@@ -41,10 +60,15 @@ for _, row in df.iterrows():
     )
     # Build a popup from that row’s data
     popup_html = (
-        f"Coordinates: {row['latitude']:.6f}, {row['longitude']:.6f} "
+        f"Coordinates: {row['latitude']:.6f}, {row['longitude']:.6f}<br>"
+        f"Pavement: {row['pavement_text']}<br>"
+        f"Curb Ramps: {row['curbs_text']}<br>"
+        f"Streetlight Count: {row['streetlight_count']}<br>"
+        f"Construction: {row['construction_text']}<br>"
         f"Score: {row['weight']}"
     )
-    popup = folium.Popup(popup_html, max_width=200, parse_html=True)
+    html = Html(popup_html, script=True)
+    popup = Popup(html, max_width=200)
     marker.add_child(popup)
     marker.add_to(m)
 
