@@ -3,12 +3,12 @@ import React from 'react'
 
 const Map = () => {
   return (
-    <div className="w-full h-full border border-purple-700 rounded-lg overflow-hidden">
+    <div className="mx-auto w-full max-w-7x1 bg-gray-50 p-6 rounded-2x1 shadow-lg overflow-hidden h-[70vh]">
       <iframe
         src="/maps/map.html"  
         width="100%"
         height="100%"
-        style={{ border: 50, borderColor: '#373584' }}
+        style={{ border: 0 }}
         title="StreetScope map"
       />
     </div>
