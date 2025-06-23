@@ -40,7 +40,7 @@ export default function Home() {
       <p
   className="absolute top-20 left-2 transform-none border-l-4 border-indigo-500 bg-indigo-50 text-indigo-700 italic pl-4 py-2 max-w-xs shadow-md"
   >
-  <span className="font-semibold">Tip:</span>{" "}
+  
   Click anywhere on the map to view that location’s accessibility details.
   </p>
 
