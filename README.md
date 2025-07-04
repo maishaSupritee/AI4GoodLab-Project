@@ -14,12 +14,15 @@ StreetScope.ai is an interactive map tool that visualizes the gaps in our infras
 - Curb ramp priorities,
 - Streetlights, and
 - Construction zones
-  We created a heatmap showing areas from low to high accessibility – so urban planners have real insights to motivate proposals.
-  StreetScope.ai is an interactive map tool that visualizes the gaps in our infrastructure to drive more equitable urban design and build a more accessible Vancouver.
+
+We created a heatmap showing areas from low to high accessibility – so urban planners have real insights to motivate proposals.
 
 # Check us out at [streetscopeai.vercel.app](https://streetscopeai.vercel.app/)
 
 ## Click to Watch the Demo:
+
+https://github.com/user-attachments/assets/0654418d-f226-47e1-951f-3bc0a3b51cd3
+
 
 # Setting up Environment
 
