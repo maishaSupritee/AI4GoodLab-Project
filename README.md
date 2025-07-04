@@ -1,4 +1,4 @@
-# Department of **\_**
+# StreetScope.ai
 
 Team Members:
 
@@ -7,6 +7,19 @@ Team Members:
 - Maria Kapitanenko
 - Sophia Don Tranho
 - Tran Nguyen
+
+StreetScope.ai is an interactive map tool that visualizes the gaps in our infrastructure to drive more equitable urban design and build a more accessible Vancouver. Using data on features such as:
+
+- Pavement conditions,
+- Curb ramp priorities,
+- Streetlights, and
+- Construction zones
+  We created a heatmap showing areas from low to high accessibility – so urban planners have real insights to motivate proposals.
+  StreetScope.ai is an interactive map tool that visualizes the gaps in our infrastructure to drive more equitable urban design and build a more accessible Vancouver.
+
+# Check us out at [streetscopeai.vercel.app](https://streetscopeai.vercel.app/)
+
+## Click to Watch the Demo:
 
 # Setting up Environment
 
@@ -37,6 +50,7 @@ The website is in the website directory
 Make sure you have node.js installed.
 
 ### Website Setup
+
 When you first download the website, run `npm install` to download the node_modules folder
 
 ### Run Website Server
